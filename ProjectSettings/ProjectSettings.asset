@@ -678,8 +678,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Hallway with Guard
-  metroPackageVersion: 
+  metroPackageName: HallwaywithGuard
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -687,7 +687,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Hallway with Guard
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Hallway with Guard
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
