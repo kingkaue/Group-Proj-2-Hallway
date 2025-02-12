@@ -9,7 +9,6 @@ public class DragonFollow : MonoBehaviour
     private GameObject destination;   
     private NavMeshAgent agent;
 
-    public Transform[] waypoints;
    
     // Start is called before the first frame update
     void Start()
