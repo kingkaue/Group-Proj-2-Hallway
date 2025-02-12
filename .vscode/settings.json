@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Hallway with Guard.sln"
+    "dotnet.defaultSolution": "Group-Proj-2-Hallway.sln"
 }
