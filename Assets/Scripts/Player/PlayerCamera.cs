@@ -10,6 +10,8 @@ public class PlayerCamera : MonoBehaviour
     float xRotation;
     float yRotation;
 
+    private GameObject gameManagerObject;
+
     // Start is called before the first frame update
     void Start()
     {
