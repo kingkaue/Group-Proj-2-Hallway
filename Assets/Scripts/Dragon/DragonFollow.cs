@@ -24,7 +24,7 @@ public class DragonFollow : MonoBehaviour
         destination = GameObject.FindGameObjectWithTag("Player");
         // Connects to Nav Mesh Agent
         agent = GetComponent<NavMeshAgent>();
-        speed = 5;
+        speed = 5f;
 
     }
 
@@ -35,20 +35,22 @@ public class DragonFollow : MonoBehaviour
         // Updates the destionation to players current location
         agent.SetDestination(destination.transform.position);
 
-        //Code for speed
-        /*
-        Vector3 direction = destination.transform.forward;
-        Vector3 movementVector = direction * speed * Time.deltaTime;
-        transform.position += movementVector;
-        */
-
         //If in raycast veiw, move backwards
         if (isGazingUpon)
         {
             transform.Translate(-destination.transform.position);
         }
 
+        Vector3 direction = destination.transform.position - transform.position;
+
+        direction.Normalize();
+
+        Vector3 movement = direction * speed * Time.deltaTime;
+
+        transform.position += movement;
+
     }
+
 
     public void GazingUpon()
     {
