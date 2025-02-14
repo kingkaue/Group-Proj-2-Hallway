@@ -2531,7 +2531,7 @@ GameObject:
   - component: {fileID: 294559888}
   - component: {fileID: 294559892}
   m_Layer: 6
-  m_Name: Cube (2)
+  m_Name: Maze Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2616,12 +2616,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294559887}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.45, z: -19.21}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.42, y: -2.1299999, z: -25.23}
   m_LocalScale: {x: 43.737747, y: 1.1830964, z: 56.15522}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1369332623}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &294559892
 MonoBehaviour:
@@ -4121,7 +4121,7 @@ GameObject:
   - component: {fileID: 684161752}
   - component: {fileID: 684161751}
   m_Layer: 6
-  m_Name: Cube
+  m_Name: Starting Room Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4206,12 +4206,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684161750}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 26.1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.42, y: -2.58, z: 20.08}
   m_LocalScale: {x: 56.216736, y: 2.0535235, z: 37.899776}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 821715587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &684295633
 GameObject:
@@ -4973,6 +4973,7 @@ Transform:
   - {fileID: 333887801}
   - {fileID: 236762176}
   - {fileID: 1302284320}
+  - {fileID: 684161754}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &855213318
@@ -7725,6 +7726,8 @@ Transform:
   - {fileID: 1706801163}
   - {fileID: 393274030}
   - {fileID: 1508763488}
+  - {fileID: 1449917029}
+  - {fileID: 294559891}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1387816604
@@ -9170,7 +9173,7 @@ GameObject:
   - component: {fileID: 1449917027}
   - component: {fileID: 1449917026}
   m_Layer: 6
-  m_Name: Cube (1)
+  m_Name: Ending Room Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9255,12 +9258,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449917025}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -66.20999}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.42, y: -2.58, z: -72.22999}
   m_LocalScale: {x: 56.21674, y: 2.053524, z: 37.89978}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1369332623}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1491418469
 GameObject:
@@ -21297,9 +21300,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 705507995}
-  - {fileID: 684161754}
-  - {fileID: 294559891}
-  - {fileID: 1449917029}
   - {fileID: 1527826940}
   - {fileID: 1860693312}
   - {fileID: 9017897488735897669}
