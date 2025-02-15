@@ -103,7 +103,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -182,10 +182,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283e3a965fe4bff44927b50d2c1b9ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  waypoints:
-  - {fileID: 3943676988100261748, guid: ef5acda463e451843bc08b7b018361ba, type: 3}
-  - {fileID: 2507262890750298637, guid: 95a8dcfd04ccb1e44821e7e4f2128c1d, type: 3}
-  - {fileID: 833998823588506875, guid: f9047e930d66a43438916a7970172b48, type: 3}
-  - {fileID: 2810677443161305590, guid: 3bf5d247aea5bc34bbdaca46d6399ad7, type: 3}
-  playerInView: 0
+  player: {fileID: 1011058458085798162, guid: 863fb8e77aae2d044954da7c1ecfd902, type: 3}
