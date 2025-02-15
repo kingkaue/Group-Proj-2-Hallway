@@ -31,26 +31,27 @@ public class DragonFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // Updates the destionation to players current location
-        agent.SetDestination(destination.transform.position);
-
         //If in raycast veiw, move backwards
-        if (isGazingUpon)
+        if (isGazingUpon == true)
         {
-            transform.Translate(-destination.transform.position);
+            //Reverses destination direction
+            Vector3 oppositeDirection = transform.position - destination.transform.position;
+            agent.SetDestination(oppositeDirection);
+            //Once it has been seen, destroy dragon after _ sec.
+            Destroy(this.gameObject, 3f);
         }
+        else
+        {  
+            // Updates the destionation to players current location
+            agent.SetDestination(destination.transform.position);
 
-        Vector3 direction = destination.transform.position - transform.position;
-
-        direction.Normalize();
-
-        Vector3 movement = direction * speed * Time.deltaTime;
-
-        transform.position += movement;
-
+            //Code to get speed to work
+            Vector3 direction = destination.transform.position - transform.position;
+            direction.Normalize();
+            Vector3 movement = direction * speed * Time.deltaTime;
+            transform.position += movement;
+        }
     }
-
 
     public void GazingUpon()
     {
