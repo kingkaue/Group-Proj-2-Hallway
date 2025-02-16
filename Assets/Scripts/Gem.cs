@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragonAttack : MonoBehaviour
+public class Gem : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,12 +16,12 @@ public class DragonAttack : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider whatIHit)
+    private void OnTriggerEnter(Collider whatDidIHit)
     {
-        if (whatIHit.tag == "Player")
+        if (whatDidIHit.tag == "Player")
         {
-            //I hit the Player!
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameOverScreen>().GameOver();
+            //Player found gem
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<WinScreen>().Win();
             Destroy(this.gameObject);
         }
     }
