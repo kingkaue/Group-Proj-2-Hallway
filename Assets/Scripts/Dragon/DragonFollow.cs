@@ -10,8 +10,6 @@ public class DragonFollow : MonoBehaviour
     private GameObject destination;   
     private NavMeshAgent agent;
 
-    private float speed;
-
     [Header("BackUp")]
     private bool isGazingUpon;
     public GameObject player;
@@ -24,8 +22,6 @@ public class DragonFollow : MonoBehaviour
         destination = GameObject.FindGameObjectWithTag("Player");
         // Connects to Nav Mesh Agent
         agent = GetComponent<NavMeshAgent>();
-        speed = 5f;
-
     }
 
     // Update is called once per frame
@@ -44,12 +40,6 @@ public class DragonFollow : MonoBehaviour
         {  
             // Updates the destionation to players current location
             agent.SetDestination(destination.transform.position);
-
-            //Code to get speed to work
-            Vector3 direction = destination.transform.position - transform.position;
-            direction.Normalize();
-            Vector3 movement = direction * speed * Time.deltaTime;
-            transform.position += movement;
         }
     }
 
