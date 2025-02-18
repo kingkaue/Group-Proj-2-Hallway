@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DragonAttack : MonoBehaviour
 {
@@ -21,8 +22,11 @@ public class DragonAttack : MonoBehaviour
         if (whatIHit.tag == "Player")
         {
             //I hit the Player!
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameOverScreen>().GameOver();
-            Destroy(this.gameObject);
+            SceneManager.LoadScene("Lose");
+
+            //Unlocks cursor
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }

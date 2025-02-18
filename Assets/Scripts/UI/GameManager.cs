@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,13 +17,22 @@ public class GameManager : MonoBehaviour
     public Transform[] dragonSpawnpoints;
     private GameObject isDragonSpawned;
 
+    public float timeRemaining = 90;
+    public bool timerIsRunning = false;
+
+    public TextMeshProUGUI timeText;
+
+    float Timer;
+
     // Start is called before the first frame update
 
     void Start()
     {
         Time.timeScale = 1f;
+        timerIsRunning = true;
         SpawnPlayer();
         SpawnDragon();
+        
     }
 
     // Update is called once per frame
@@ -34,6 +45,20 @@ public class GameManager : MonoBehaviour
         if(isDragonSpawned == null)
         {
             SpawnDragon();
+        }
+
+        if (timerIsRunning)
+        {
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                DisplayTime(timeRemaining);
+            }
+            else
+            {
+                GameOver();
+                SceneManager.LoadScene("Lose");
+            }
         }
     }
 
@@ -50,6 +75,31 @@ public class GameManager : MonoBehaviour
 
         // Spawns dragon at a random Dragon Spawnpoint
         dragonInstance = Instantiate(dragon, dragonSpawnpoints[spawnPoint].position, dragonSpawnpoints[spawnPoint].rotation);
+    }
+
+    public void GameOver()
+    {
+
+        Time.timeScale = 0f;
+
+        //Unlocks cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        timeRemaining = 0;
+        timerIsRunning = false;
+        timeText.text = "";
+
+    }
+
+    void DisplayTime(float timeToDisplay)
+    {
+        timeToDisplay += 1;
+
+        float minutes = Mathf.FloorToInt(timeRemaining / 60);
+        float seconds = Mathf.FloorToInt(timeRemaining % 60);
+
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
 
