@@ -421,6 +421,7 @@ GameObject:
   - component: {fileID: 3835655105027478140}
   - component: {fileID: 3295205758613204702}
   - component: {fileID: 3353109868379760711}
+  - component: {fileID: 348029096400505986}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -570,3 +571,11 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!81 &348029096400505986
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8392980117259217430}
+  m_Enabled: 1

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gem : MonoBehaviour
 {
@@ -21,8 +22,7 @@ public class Gem : MonoBehaviour
         if (whatDidIHit.tag == "Player")
         {
             //Player found gem
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<WinScreen>().Win();
-            Destroy(this.gameObject);
+            SceneManager.LoadScene("Win");
         }
     }
 }
