@@ -5636,6 +5636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dragon2
       objectReference: {fileID: 0}
+    - target: {fileID: 3498108196221250934, guid: 0b4c517258b332e4086b32fa19023e58, type: 3}
+      propertyPath: m_BaseOffset
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4500814429677218392, guid: 0b4c517258b332e4086b32fa19023e58, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.062080707
@@ -5688,7 +5692,9 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2676487027955846858, guid: 0b4c517258b332e4086b32fa19023e58, type: 3}
+    - {fileID: 5326043079356401731, guid: 0b4c517258b332e4086b32fa19023e58, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
