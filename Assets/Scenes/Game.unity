@@ -9533,7 +9533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1011058458085798162, guid: 863fb8e77aae2d044954da7c1ecfd902, type: 3}
   playerSpawnpoint: {fileID: 1421368894}
-  dragon: {fileID: 7916758848710822370, guid: 3f61d6b6d9464854eae73f04bd0072ab, type: 3}
+  dragon: {fileID: 1073157068991173477, guid: 7e57f778647e836409e19308a413816a, type: 3}
   dragonSpawnpoints:
   - {fileID: 4584593494294729751, guid: 787f48b546301354dbd73a725ad9952d, type: 3}
   - {fileID: 4748580615092896028, guid: e5588f74c73f82b49842f43fb97f0190, type: 3}
