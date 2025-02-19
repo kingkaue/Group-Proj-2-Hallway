@@ -20,11 +20,11 @@ GameObject:
   - component: {fileID: 8729105351136643694}
   m_Layer: 0
   m_Name: TestDragon
-  m_TagString: Dragon
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5805096856332066081
 Transform:
   m_ObjectHideFlags: 0

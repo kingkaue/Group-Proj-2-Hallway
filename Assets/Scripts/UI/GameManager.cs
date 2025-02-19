@@ -17,12 +17,11 @@ public class GameManager : MonoBehaviour
     public Transform[] dragonSpawnpoints;
     private GameObject isDragonSpawned;
 
+    [Header("Timer")]
     public float timeRemaining = 90;
     public bool timerIsRunning = false;
 
     public TextMeshProUGUI timeText;
-
-    float Timer;
 
     // Start is called before the first frame update
 
@@ -41,8 +40,7 @@ public class GameManager : MonoBehaviour
         // Checks if there is a dragon spawned
         isDragonSpawned = GameObject.FindGameObjectWithTag("Dragon");
 
-        // If no dragon, spawns a new one
-        if(isDragonSpawned == null)
+        if (isDragonSpawned == null)
         {
             SpawnDragon();
         }
@@ -71,7 +69,7 @@ public class GameManager : MonoBehaviour
     public void SpawnDragon()
     {
         // Chooses a random int between 0 and 3
-        int spawnPoint = Random.Range(0, 3);
+        int spawnPoint = Random.Range(0, 2);
 
         // Spawns dragon at a random Dragon Spawnpoint
         dragonInstance = Instantiate(dragon, dragonSpawnpoints[spawnPoint].position, dragonSpawnpoints[spawnPoint].rotation);

@@ -11,6 +11,7 @@ public class WinScreen : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
+
     public void Restart()
     {
         SceneManager.LoadScene("Game");

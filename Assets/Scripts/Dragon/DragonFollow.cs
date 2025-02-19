@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,7 +11,6 @@ public class DragonFollow : MonoBehaviour
 
     [Header("BackUp")]
     private bool isGazingUpon;
-
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +30,6 @@ public class DragonFollow : MonoBehaviour
             //Reverses destination direction
             Vector3 oppositeDirection = transform.position - destination.transform.position;
             agent.SetDestination(oppositeDirection);
-            //Once it has been seen, destroy dragon after _ sec.
             Destroy(this.gameObject, 3f);
         }
         else
