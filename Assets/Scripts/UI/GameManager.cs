@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
     public void SpawnDragon()
     {
         // Chooses a random int between 0 and 3
-        int spawnPoint = Random.Range(0, 4);
+        int spawnPoint = Random.Range(0, 3);
 
         // Spawns dragon at a random Dragon Spawnpoint
         dragonInstance = Instantiate(dragon, dragonSpawnpoints[spawnPoint].position, dragonSpawnpoints[spawnPoint].rotation);

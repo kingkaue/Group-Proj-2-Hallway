@@ -12,7 +12,6 @@ public class DragonFollow : MonoBehaviour
 
     [Header("BackUp")]
     private bool isGazingUpon;
-    public GameObject player;
 
 
     // Start is called before the first frame update
