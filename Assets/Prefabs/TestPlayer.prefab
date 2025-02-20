@@ -182,6 +182,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   orientation: {fileID: 7936953859963535485}
+  PlayerControls: {fileID: -944628639613478452, guid: 8c928e58b7d7d2946ab21c36a3ca8fc3, type: 3}
 --- !u!54 &6119975360537908179
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -190,7 +191,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011058458085798162}
   serializedVersion: 4
-  m_Mass: 1.5
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -508,9 +509,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 885c12f423161cb4ebb98c16ab6e4510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 400
-  sensY: 400
+  sensX: 100
+  sensY: 100
   orientation: {fileID: 7936953859963535485}
+  PlayerControls: {fileID: -944628639613478452, guid: 8c928e58b7d7d2946ab21c36a3ca8fc3, type: 3}
 --- !u!114 &3353109868379760711
 MonoBehaviour:
   m_ObjectHideFlags: 0

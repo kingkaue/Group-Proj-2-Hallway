@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -27,6 +28,13 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform orientation;
 
+    [Header("Input Actions")]
+    [SerializeField] private InputActionAsset PlayerControls;
+    private InputAction moveAction;
+    private InputAction jumpAction;
+    private InputAction sprintAction;
+    private Vector2 moveInput;
+
     float horizontalInput;
     float verticalInput;
 
@@ -34,10 +42,36 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+    }
+
+    private void Awake()
+    {
+        moveAction = PlayerControls.FindActionMap("Player").FindAction("Move");
+        jumpAction = PlayerControls.FindActionMap("Player").FindAction("Jump");
+        sprintAction = PlayerControls.FindActionMap("Player").FindAction("Sprint");
+
+        moveAction.performed += context => moveInput = context.ReadValue<Vector2>();
+        moveAction.canceled += context => moveInput = Vector2.zero;
+    }
+
+    private void OnEnable()
+    {
+        moveAction.Enable();
+        jumpAction.Enable();
+        sprintAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        moveAction.Disable();
+        jumpAction.Disable();
+        sprintAction.Disable();
     }
 
     private void Update()
@@ -66,19 +100,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerInput()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKey(jumpKey) && readyToJump && isGrounded)
+        if (jumpAction.triggered && readyToJump && isGrounded)
         {
             readyToJump = false;
 
             Jump();
 
-            Invoke(nameof(ResetJump), jumpCooldown); 
+            Invoke(nameof(ResetJump), jumpCooldown);
         }
 
-        if(Input.GetKey(sprintKey))
+        if (sprintAction.ReadValue<float>() > 0)
         {
             moveSpeed = sprintMoveSpeed;
         }
@@ -90,13 +122,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        moveDirection = orientation.forward * moveInput.y + orientation.right * moveInput.x;
 
-        if(isGrounded)
+        if (isGrounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         }
-        else if(!isGrounded)
+        else if (!isGrounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
         }
