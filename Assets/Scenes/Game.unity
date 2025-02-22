@@ -9188,7 +9188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1011058458085798162, guid: 863fb8e77aae2d044954da7c1ecfd902, type: 3}
   playerSpawnpoint: {fileID: 1421368894}
-  dragon: {fileID: 1073157068991173477, guid: 7e57f778647e836409e19308a413816a, type: 3}
+  dragon: {fileID: 149988938757701821, guid: 9fb1f26fe71e3984b92f110e71e85d85, type: 3}
   dragonSpawnpoints:
   - {fileID: 4584593494294729751, guid: 787f48b546301354dbd73a725ad9952d, type: 3}
   - {fileID: 4748580615092896028, guid: e5588f74c73f82b49842f43fb97f0190, type: 3}
