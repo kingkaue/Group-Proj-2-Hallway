@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 6119975360537908179}
   - component: {fileID: 4943996760234500918}
   - component: {fileID: 4739465779818277104}
+  - component: {fileID: 4274921080793174735}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Player
@@ -252,7 +253,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -296,6 +297,21 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &4274921080793174735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011058458085798162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f4c7eb4ed2482c4cac405dde8425555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minIntensity: 2.5
+  maxIntensity: 5
+  timeBetweenIntensity: 0.1
 --- !u!1 &3332870093932084330
 GameObject:
   m_ObjectHideFlags: 0
