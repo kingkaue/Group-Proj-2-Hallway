@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [Header ("Player")]
+    [Header("Player")]
     public GameObject player;
     public Transform playerSpawnpoint;
     private GameObject playerInstance;
 
-    [Header ("Dragon")]
+    [Header("Dragon")]
     public GameObject dragon;
     private GameObject dragonInstance;
-    public Transform[] dragonSpawnpoints;
+    public BoxCollider[] dragonSpawnAreas;
     private GameObject isDragonSpawned;
 
     [Header("Timer")]
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
         SpawnPlayer();
         SpawnDragon();
         SpawnGem();
-        
+
     }
 
     // Update is called once per frame
@@ -74,11 +75,30 @@ public class GameManager : MonoBehaviour
 
     public void SpawnDragon()
     {
-        // Chooses a random int between 0 and 3
-        int spawnPoint = Random.Range(0, 2);
+        int spawnArea = Random.Range(0, dragonSpawnAreas.Length);
 
-        // Spawns dragon at a random Dragon Spawnpoint
-        dragonInstance = Instantiate(dragon, dragonSpawnpoints[spawnPoint].position, dragonSpawnpoints[spawnPoint].rotation);
+        Vector3 randomPoint = GetRandomPoint(spawnArea);
+
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomPoint, out hit, 10f, NavMesh.AllAreas))
+        {
+            Instantiate(dragon, hit.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("Failed to find a valid spawn point on the NavMesh.");
+        }
+    }
+
+    Vector3 GetRandomPoint(int area)
+    {
+        Vector3 center = dragonSpawnAreas[area].bounds.center;
+        Vector3 size = dragonSpawnAreas[area].bounds.size;
+
+        float randomX = Random.Range(center.x - size.x / 2, center.x + size.x / 2);
+        float randomZ = Random.Range(center.z - size.z / 2, center.z + size.z / 2);
+
+        return new Vector3(randomX, center.y, randomZ);
     }
 
     void SpawnGem()
