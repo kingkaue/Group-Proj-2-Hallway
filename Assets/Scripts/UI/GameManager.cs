@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour
     public float timeRemaining = 90;
     public bool timerIsRunning = false;
 
+    [Header("Gem")]
+
+    public GameObject gem;
+    private GameObject gemInstance;
+
     public TextMeshProUGUI timeText;
 
     // Start is called before the first frame update
@@ -31,6 +36,7 @@ public class GameManager : MonoBehaviour
         timerIsRunning = true;
         SpawnPlayer();
         SpawnDragon();
+        SpawnGem();
         
     }
 
@@ -73,6 +79,13 @@ public class GameManager : MonoBehaviour
 
         // Spawns dragon at a random Dragon Spawnpoint
         dragonInstance = Instantiate(dragon, dragonSpawnpoints[spawnPoint].position, dragonSpawnpoints[spawnPoint].rotation);
+    }
+
+    void SpawnGem()
+    {
+        Vector3 gemLocation = new Vector3(Random.Range(-13f, 38f), 2f, Random.Range(-89f, -56f));
+
+        gemInstance = Instantiate(gem, gemLocation, Quaternion.identity);
     }
 
     public void GameOver()
