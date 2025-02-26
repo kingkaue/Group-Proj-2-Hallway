@@ -19,6 +19,8 @@ public class PlayerCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        orientation = GameObject.Find("Orientation").transform;
+
         // Locks cursor to middle of screen
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

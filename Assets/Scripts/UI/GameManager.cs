@@ -14,20 +14,18 @@ public class GameManager : MonoBehaviour
 
     [Header("Dragon")]
     public GameObject dragon;
-    private GameObject dragonInstance;
     public BoxCollider[] dragonSpawnAreas;
     private GameObject isDragonSpawned;
 
     [Header("Timer")]
     public float timeRemaining = 90;
     public bool timerIsRunning = false;
-
-    [Header("Gem")]
-
-    public GameObject gem;
-    private GameObject gemInstance;
-
     public TextMeshProUGUI timeText;
+
+    
+    [Header("Gem")]
+    public GameObject gem;
+    public BoxCollider gemSpawnArea;
 
     // Start is called before the first frame update
 
@@ -77,7 +75,7 @@ public class GameManager : MonoBehaviour
     {
         int spawnArea = Random.Range(0, dragonSpawnAreas.Length);
 
-        Vector3 randomPoint = GetRandomPoint(spawnArea);
+        Vector3 randomPoint = GetRandomPointDragon(spawnArea);
 
         NavMeshHit hit;
         if (NavMesh.SamplePosition(randomPoint, out hit, 10f, NavMesh.AllAreas))
@@ -90,7 +88,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    Vector3 GetRandomPoint(int area)
+    Vector3 GetRandomPointDragon(int area)
     {
         Vector3 center = dragonSpawnAreas[area].bounds.center;
         Vector3 size = dragonSpawnAreas[area].bounds.size;
@@ -101,11 +99,30 @@ public class GameManager : MonoBehaviour
         return new Vector3(randomX, center.y, randomZ);
     }
 
+    Vector3 GetRandomPointGem()
+    {
+        Vector3 center = gemSpawnArea.bounds.center;
+        Vector3 size = gemSpawnArea.bounds.size;
+
+        float randomX = Random.Range(center.x - size.x / 2, center.x + size.x / 2);
+        float randomZ = Random.Range(center.z - size.z / 2, center.z + size.z / 2);
+
+        return new Vector3(randomX, center.y, randomZ);
+    }
+
     void SpawnGem()
     {
-        Vector3 gemLocation = new Vector3(Random.Range(-13f, 38f), 2f, Random.Range(-89f, -56f));
+        Vector3 randomPoint = GetRandomPointGem();
 
-        gemInstance = Instantiate(gem, gemLocation, Quaternion.identity);
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomPoint, out hit, 10f, NavMesh.AllAreas))
+        {
+            Instantiate(gem, hit.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("Failed to find a valid spawn point on the NavMesh.");
+        }
     }
 
     public void GameOver()
