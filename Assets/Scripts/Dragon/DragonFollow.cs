@@ -25,6 +25,7 @@ public class DragonFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //look at script
         Vector3 scale = transform.localScale;
 
         if (destination.transform.position.x > transform.position.x)
@@ -38,11 +39,15 @@ public class DragonFollow : MonoBehaviour
 
         transform.localScale = scale;
 
+        transform.LookAt(destination.transform);
+
+
         //If in raycast veiw, move backwards
         if (isGazingUpon == true)
         {
             //Reverses destination direction
             Vector3 oppositeDirection = transform.position - destination.transform.position;
+            
             agent.SetDestination(oppositeDirection);
             Destroy(this.gameObject, 3f);
         }
