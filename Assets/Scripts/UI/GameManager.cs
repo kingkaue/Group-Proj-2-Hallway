@@ -73,7 +73,20 @@ public class GameManager : MonoBehaviour
 
     public void SpawnDragon()
     {
+        bool canSpawn = false;
         int spawnArea = Random.Range(0, dragonSpawnAreas.Length);
+
+        while (canSpawn == false)
+        {
+            if (dragonSpawnAreas[spawnArea].GetComponent<PlayerCheck>().isPlayerInside == false)
+            {
+                canSpawn = true;
+            }
+            else
+            {
+                spawnArea = Random.Range(0, dragonSpawnAreas.Length);
+            }
+        }
 
         Vector3 randomPoint = GetRandomPointDragon(spawnArea);
 

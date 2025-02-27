@@ -12308,6 +12308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 187052776}
   - component: {fileID: 187052775}
+  - component: {fileID: 187052777}
   m_Layer: 0
   m_Name: Dragon Spawn Area
   m_TagString: Untagged
@@ -12351,6 +12352,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1185195780}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &187052777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187052774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0179240c2529bc245b17ee5ef1e58f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayerInside: 0
 --- !u!1 &221675206
 GameObject:
   m_ObjectHideFlags: 0
@@ -27592,6 +27606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 988255340}
   - component: {fileID: 988255339}
+  - component: {fileID: 988255341}
   m_Layer: 0
   m_Name: Dragon Spawn Area (1)
   m_TagString: Untagged
@@ -27635,6 +27650,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1185195780}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &988255341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988255338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0179240c2529bc245b17ee5ef1e58f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayerInside: 0
 --- !u!1 &1060705830
 GameObject:
   m_ObjectHideFlags: 0
@@ -32925,6 +32953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1126561038}
   - component: {fileID: 1126561037}
+  - component: {fileID: 1126561039}
   m_Layer: 0
   m_Name: Dragon Spawn Area (2)
   m_TagString: Untagged
@@ -32968,6 +32997,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1185195780}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1126561039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126561036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0179240c2529bc245b17ee5ef1e58f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayerInside: 0
 --- !u!43 &1164218899
 Mesh:
   m_ObjectHideFlags: 0
@@ -34794,6 +34836,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1391086821}
   - component: {fileID: 1391086820}
+  - component: {fileID: 1391086822}
   m_Layer: 0
   m_Name: Dragon Spawn Area (3)
   m_TagString: Untagged
@@ -34837,6 +34880,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1185195780}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1391086822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391086819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0179240c2529bc245b17ee5ef1e58f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayerInside: 0
 --- !u!1 &1391742928
 GameObject:
   m_ObjectHideFlags: 0
