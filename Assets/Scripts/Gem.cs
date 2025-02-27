@@ -5,18 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Gem : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public SpriteRenderer gemRenderer;
+
     void Start()
     {
-        //Unlocks cursor
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        gemRenderer.enabled = false;
     }
-
     // Update is called once per frame
     void Update()
     {
         transform.Rotate(0f, 50 * Time.deltaTime, 0f, Space.Self);
+
     }
 
     private void OnTriggerEnter(Collider whatDidIHit)
