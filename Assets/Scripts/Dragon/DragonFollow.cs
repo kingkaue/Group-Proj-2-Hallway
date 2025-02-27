@@ -9,7 +9,6 @@ public class DragonFollow : MonoBehaviour
     [Header("Tracking")]
     private GameObject destination;   
     private NavMeshAgent agent;
-    public bool flip;
 
     [Header("BackUp")]
     private bool isGazingUpon;
@@ -30,11 +29,11 @@ public class DragonFollow : MonoBehaviour
 
         if (destination.transform.position.x > transform.position.x)
         {
-            scale.x = Mathf.Abs(scale.x) * -1 * (flip ? -1 : 1);
+            scale.x = Mathf.Abs(scale.x) * -1;
         }
         else 
         {
-            scale.x = Mathf.Abs(scale.x) * (flip ? -1 : 1);
+            scale.x = Mathf.Abs(scale.x);
         }
 
         transform.localScale = scale;
