@@ -21,7 +21,8 @@ public class GazeManager : MonoBehaviour
 
         Ray gazeRay = new Ray(viewCamera.transform.position, viewCamera.transform.rotation * Vector3.forward);
         RaycastHit hit;
-        if (Physics.Raycast(gazeRay, out hit, Mathf.Infinity))
+        float sphereCastRadius = 3.0f;
+        if (Physics.SphereCast(gazeRay, sphereCastRadius, out hit))
         {
             hit.transform.SendMessage("GazingUpon", SendMessageOptions.DontRequireReceiver);
             lastGazedUpon = hit.transform.gameObject;
