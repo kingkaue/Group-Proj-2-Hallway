@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8057130677921618365}
   - component: {fileID: 7611332071375629090}
   - component: {fileID: 8657931157580192347}
-  - component: {fileID: 4143664740181054546}
+  - component: {fileID: 3035260722516573585}
   m_Layer: 0
   m_Name: DragonTest2
   m_TagString: Dragon
@@ -378,7 +378,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4143664740181054546
+--- !u!114 &3035260722516573585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 149988938757701821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 124d81ad13cec55428a112be637029f4, type: 3}
+  m_Script: {fileID: 11500000, guid: d3f1cfe4e9591c04191e6bade52ed5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visibilityRange: 10
+  visibilityRange: 7
