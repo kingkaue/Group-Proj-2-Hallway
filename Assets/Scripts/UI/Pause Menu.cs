@@ -11,11 +11,13 @@ public class PauseMenu : MonoBehaviour
     private InputAction pauseAction;
     public GameObject pauseMenu;
     public static bool isPaused;
+    private GameObject crosshair;
 
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu.SetActive(false);
+        crosshair = GameObject.FindGameObjectWithTag("Crosshair");
     }
 
     private void Awake()
@@ -41,10 +43,12 @@ public class PauseMenu : MonoBehaviour
             if(isPaused)
             {
                 ResumeGame();
+                crosshair.SetActive(true);
             }
             else
             {
                 PauseGame();
+                crosshair.SetActive(false);
             }
         }
     }
