@@ -42,3 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Gem
+    uniqueID: 2401245807
+    locked: 0
+  - name: Text
+    uniqueID: 1265508069
+    locked: 0
+  - name: Buttons
+    uniqueID: 2042682581
+    locked: 0
