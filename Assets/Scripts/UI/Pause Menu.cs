@@ -43,12 +43,10 @@ public class PauseMenu : MonoBehaviour
             if(isPaused)
             {
                 ResumeGame();
-                crosshair.SetActive(true);
             }
             else
             {
                 PauseGame();
-                crosshair.SetActive(false);
             }
         }
     }
@@ -58,6 +56,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        crosshair.SetActive(false);
 
         //Unlocks cursor
         Cursor.lockState = CursorLockMode.None;
@@ -69,6 +68,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        crosshair.SetActive(true);
 
         // Locks cursor
         Cursor.lockState = CursorLockMode.Locked;
