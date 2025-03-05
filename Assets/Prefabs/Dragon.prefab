@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7939965707997095201}
   - component: {fileID: 4824722413410336486}
-  - component: {fileID: 1912034377859734911}
-  - component: {fileID: 495736025668185213}
+  - component: {fileID: 6786520165012793160}
+  - component: {fileID: 369078590431399363}
   - component: {fileID: 3300235467563170703}
   - component: {fileID: 1223657884693261114}
   - component: {fileID: 3237319349189124570}
@@ -35,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 960918399940521164}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.11, y: 0.89, z: -35.13}
+  m_LocalPosition: {x: 5.11, y: 0.8, z: -35.13}
   m_LocalScale: {x: 0.43, y: 0.43, z: 0.43}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93,7 +93,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &1912034377859734911
+--- !u!65 &6786520165012793160
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,13 +108,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.11, y: 7.74, z: 0.2}
-  m_Center: {x: 0, y: 4.12, z: 0}
---- !u!54 &495736025668185213
+  m_Size: {x: 11.48, y: 8.26, z: 0.2}
+  m_Center: {x: 0, y: 4.13, z: 0}
+--- !u!54 &369078590431399363
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,7 +244,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.6
+      value: 0.8
       inSlope: 0
       outSlope: 0
       tangentMode: 0
